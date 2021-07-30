@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>이벤트 리스너 작성 - HTML 태그내에 작성</title>
+    </head>
+
+    <body>
+        <button id="myBtn">버튼을 누르세요!</button>
+        <script>
+            document.getElementById("myBtn").addEventListener('click',function()
+            // addEventListener()方法将指定的监听器注册到EventTarget上
+            // 当该对象触发指定的事件时,指定的回调函数就会被执行
+            // click表示监听事件类型的字符串
+            {
+                alert("반갑습니다!");
+            });
+        </script>
+    </body>
+</html>

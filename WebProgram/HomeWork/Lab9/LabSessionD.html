@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>사용자 객체 정의</title>
+        <script>
+            // 프로토타입
+            function Car(make, model, year)
+            {
+                this.make = make;
+                this.model = model;
+                this.year = year;
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>car 객체 만들기</h1>
+        <hr>
+        <script>
+            // new Object()를 이용한다
+            var car = new Object();
+            car.make = "Hyundai";
+            car.model = "GENESIS";
+            car.year = 2020;
+            document.write("car: " + car.make + "," + car.model + "," + car.year + "<br>");
+
+            // 객체 리티럴
+            var car = {
+                make : "Hyundai",
+                model : "GENESIS",
+                year : 2020
+            }
+            document.write("car: " + car.make + "," + car.model + "," + car.year + "<br>");
+
+            var car = new Car("Hyundai", "GENESIS", 2020);
+            document.write("car: " + car.make + "," + car.model + "," + car.year);
+        </script>
+    </body>
+</html>

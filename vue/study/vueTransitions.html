@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>同时使用过渡和动画</title>
+        <script src="./vue.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+        <style>
+            .fade-enter,
+            .fade-leave-to {
+                opacity: 0
+            }
+            .fade-enter-active,
+            .fade-leave-active {
+                transition: opacity 1s
+            }
+        </style>
+    </head>
+    <body>
+
+
+        <div id="app">
+            <transition 
+                        type="transition"
+                        :duration="{enter: 5000, leave: 10000}"
+                        name="fade"
+                        appear
+                        enter-active-class="animate__animated animate__swing" 
+                        leave-active-class="animate__animated animate__flash"
+                        appera-active-class="animate__animated animate__swing"
+            >
+                <div v-if="show">
+                    hello world
+                </div>
+            </transition>
+            <button @click="handleClick">切换</button>
+        </div>
+
+        <script>
+
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    show: true
+                },
+                methods: {
+                    handleClick: function() {
+                        this.show = !this.show
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

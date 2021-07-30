@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML&lt;head&gt;</title>
+        <!--&lt;字符实体显示小于号,&gt;字符实体显示大于号-->
+        <!--<title>元素:
+            定义了浏览器工具栏的标题
+            当网页添加到收藏夹时,显示在收藏夹中的标题
+            显示在搜索引擎结果页面的标题
+        -->
+        <base href="https://www.runoob.com/images/" target="_blank">
+        <!--<base>标签描述了基本的链接地址/链接目标,该标签作为HTML文档中所有的链接标签的默认链接-->
+        <meta name="description" content="免费在线教程">
+        <!--为网页定义描述内容-->
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+        <!--为搜索引擎定义关键词-->
+        <meta name="author" content="runoob">
+        <!--定义网页作者-->
+        <meta http-equiv="refresh" content="30">
+        <!--每30秒刷新当前页面-->
+        <!--使用<meta>元素来描述HTML文档的描述,关键词,作者,字符集等-->
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <!--定义了文档与外部资源之间的关系,此标签通常用于链接到样式表-->
+        <style type="text/css">
+            body {background-color: white}
+            p {color: black}
+        </style>
+        <!--<style>标签定义了HTML文档的样式文件引用地址.在<style>元素中也可以直接添加样式来渲染HTML文档-->
+    </head>
+
+    <body>
+        <script>
+            document.write("Hello World!")
+        </script>
+        <!--<script>标签用于加载脚本文件,如JavaScript-->
+        <p>
+            <img src="logo.png"> - 注意这里设置了图片的相对地址.能正常显示是因为在head部分设置了base标签,
+            该标签指定了页面上所有链接的默认URL,所有该图片的访问地址为"https://www.runoob.com/images/logo.png".
+            <p>
+                <b>注释: </b>使用&lt;base&gt;定义页面中所有链接默认的链接目标地址.
+            </p>
+        </p>
+        <hr>
+        <p>
+            <a href="https://www.runoob.com/">菜鸟教程</a> - 注意这个链接会在新窗口打开,即使它没有 target="_blankZ"属性
+            因为在base标签里我们已经设置过target属性的值为"_blank".
+        </p>
+    </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML表单和输入</title>
+    </head>
+
+    <body>
+        <p>
+            <form action="">
+                First name : <input type="text" name="firstname"><br/>
+                Last name : <input type="text" name="Lastname">
+            </form>
+            <p>
+                <b>注释: </b>表单本身是不可见的,并且注意一个文本字段的默认宽度是20个字符
+            </p>
+        </p>
+        <hr>
+        <p>
+            <form action="">
+                Username : <input type="text" name="use"><br/>
+                Password: <input type="password" name="password">
+            </form>
+            <p>
+                <b>注释: </b>密码字段中的字符是隐藏的(显示为星号或圆圈)
+            </p>
+        </p>
+        <hr>
+        <p>
+            <form action="">
+                <input type="radio" name="sex" value="male">Male<br/>
+                <input type="radio" name="sex" value="female">Female
+            </form>
+        </p>
+        <p>
+            <b>注释: </b>当用户点击一个单选按钮时,它就会被选中,其他同名的单选按钮就不会被选中
+        </p>
+        <hr>
+        <p>
+            <form action="">
+                <input type="checkbox" name="veicle" value="Bike">I have a bike<br/>
+                <input type="checkbox" name="veicle" value="Car">I have a car<br/>
+            </form>
+            <p>
+                <b>注释: </b>checbox定义了复选框,用户需要从若干给定的选择中选取一个或若干选项
+            </p>
+        </p>
+        <hr>
+        <p>
+            <form action="">
+                <select name="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="fiat" selected>Fiat</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </form>
+            <p>
+                <b>注释: </b>创建简单的下拉列表框,下拉列表框是一个可选列表, selected关键字控制预选值
+            </p>
+        </p>
+        <hr>
+        <p>
+            <textarea rows="10" cols="30">
+                我是一个文本框
+            </textarea>
+            <b>注释: </b>创建文本域(多行文本输入控件) 用户可在文本域中写入文本 可写入字符的字数不受限制
+        </p>
+        <hr>
+        <p>
+            <form action="">
+                <input type="button" value="Hello world!">
+            </form>
+            <b>注释: </b>创建按钮 可以对按钮上的文字进行自定义
+        </p>
+        <hr>
+        <p>
+            <form action="">
+                <fieldset>
+                    <legend>Personal information:</legend>
+                    Name: <input type="text" size="30"><br/>
+                    E-mail: <input type="text" size="30"><br/>
+                    Date of birth: <input type="text" size="10">
+                </fieldset>
+            </form>
+            <p>
+                <b>注释: </b>在数据周围绘制一个标题的框
+            </p>
+        </p>
+        <hr>
+        <p>
+            <form action="demo-form.php">
+                First name: <input type="text" name="FirstName" value="Mickey"><br/>
+                Lastn name: <input type="text" name="LastName" value="Mouse"><br/>
+                <input type="submit" value="提交">
+            </form>
+            <p>
+                <b>注释: </b>点击"提交"按钮,表单数据将被发送到服务器上的“demo-form.php"
+            </p>
+        </p>
+        <hr>
+        <p>
+            <form action="demo-form.php" method="get">
+                <input type="checkbox" name="vehicle[]" value="Bike">I have a bike<br/>
+                <input type="checkbox" name="vehicle[]" value="Car" checked="checked">I have a car<br/>
+                <input type="submit" value="提交">
+            </form>
+            <p>
+                <b>注释: </b>此表单包含两个复选框和一个确认框
+            </p>
+        </p>
+        <hr>
+        <p>
+            <form action="demo-form.php" method="get">
+                <input type="radio" name="sex" value="Male">Male<br/>
+                <input type="radio" name="sex" value="Female" checked="checked">Femal<br/>
+            </form>
+            <p>
+                <b>注释: </b>此表单包含两个单选框和一个确认按钮
+            </p>
+        </p>
+        <hr>
+        <p>
+            <h3>发送邮件到someone@example.com:</h3>
+            <form action="MAILTO:someone@example.com" method="post" enctype="text/plain">
+                Name:<br/>
+                <input type="text" name="name" value="your name"><br/>
+                E-mail:<br/>
+                <input type="text" name="mail" value="your email"><br/>
+                Comment:<br/>
+                <input type="text" name="comment" value="your comment" size="50"><br/><br/>
+                <input type="submit" value="发送">
+                <input type="reset" value="重置">
+            </form>
+            <p>
+                <b>注释: </b>从表单发送电子邮件
+            </p>
+        </p>
+    </body>
+</html>

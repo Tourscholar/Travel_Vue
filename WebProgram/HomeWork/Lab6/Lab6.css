@@ -1,0 +1,11 @@
+body {background-color: aliceblue;}
+p {font-family: 휴먼편지체; font-size: 1em; text-indent: 1em;}
+/* text-indent属性规定文本块中首行文本的缩进 */
+h1 {color: brown; text-align: center;}
+h2 {color: blue; text-shadow: 2px 2px 8px;}
+/* text-shadow属性链接一个或更多的阴影文本,指定的每2或3个长度值和一个可选的颜色值用逗号分隔开 */
+ul {border: 1px dotted;}
+a {text-decoration: none;}
+/* text-decoration属性规定添加到文本的修饰,下划线,上划线,删除线, none表示没有下划线 */
+footer {background-color: orange; border-radius: 20px;}
+/* border-radius属性省略边框的四个角 */

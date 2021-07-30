@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Lab Session A : prompt()</title>
+    </head>
+
+    <body>
+        <h1>화수목금토일</h1>
+        <hr>
+        <script>
+            var rer = prompt("월화수목금토일 중에서 입력하세요", "");
+            // prompt()函数用于显示可提示用户进行输入的对话框
+            switch (rer)
+            {
+                case "월" :
+                    document.write("월요일은 수업");
+                    // wirte()方法可向文档写入HTML表达式或者JavaScript代码
+                    break;
+                case "화" : 
+                    document.write("화요일은 수업");
+                    break;
+                case "수" :
+                    document.write("수요일은 수업");
+                    break;
+                case "목" : 
+                    document.write("목요일은 수업");
+                    break;
+                case "금" :
+                    document.write("금요일은 수업");
+                    break;
+                case "토" : 
+                case "일" :
+                    document.write("휴일");
+                    break;
+                default :
+                    alert("잘못입력하였음");
+            }
+        </script>
+    </body>
+</html>

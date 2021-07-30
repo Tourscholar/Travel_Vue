@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Z-index</title>
+        <style>
+            p {position: absolute;}
+            #box1 {
+                background-color: blue;
+                width: 150px;
+                height: 100px;
+                z-index: 1; left: 5px; top: 10px;
+            }
+            #box2 {
+                background-color: yellow;
+                width: 150px;
+                height: 100px;
+                z-index: 2; left: 50px; top: 30px;
+            }
+            #box3 {
+                background-color: green;
+                width: 150px;
+                height: 100px;
+                z-index: 3; left:100px; top: 60px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <p id="box1">box #1</p>
+        <!--z-index 属性设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。-->
+        <p id="box2">box #2</p>
+        <p id="box3">box #3</p>
+    </body>
+</html>

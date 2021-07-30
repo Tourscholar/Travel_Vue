@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>计算属性，方法，侦听器</title>
+        <script src="./vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            {{fullName}}
+            {{age}}
+        </div>
+
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    firstName: "Kang",
+                    lastName: "rongjie",
+                    fullName: "Kang rongjie",
+                    age: 22
+                },
+                // 侦听器
+                watch: {
+                    // watch也具备缓存机制
+                    firstName: function() {
+                        console.log("计算了一次")
+                        this.fullName = this.firstname + " " + this.lastname
+                    },
+                    lastName: function() {
+                        console.log("计算了一次")
+                        this.fullName = this.firstName + " " + this.lastName
+                    }
+                }
+                // 方法
+                // methods: {
+                //    fullName: function(){
+                //        console.log("计算了一次")
+                //        // 方法没有缓存机制，性能不如计算属性
+                //        return this.firstName + " " + this.lastName
+                //    }
+                // }
+                // 计算属性
+                // computed: {
+                //    fullName: function() {
+                //        console.log("计算了一次")
+                //        // 计算属性有缓存的概念，即计算属性依赖的值没有发生变化就不会再重新计算
+                //        return this.firstName + " " + this.lastName
+                //    }
+                //}
+            })
+        </script>
+    </body>
+</html>

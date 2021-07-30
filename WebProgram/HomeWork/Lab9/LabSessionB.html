@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>[] 배열과 Array() 객체</title>
+    </head>
+
+    <body>
+        <h1>정수 5개 입력받아 역순으로 출력</h1>
+        <hr>
+        <script>
+            var string = prompt("정수 5개를 입력하세요: ");
+            var NumberOfString = new Array(5);
+            NumberOfString = string;
+            document.write("입력된 수의 배열" + "<br/>" + NumberOfString + "<hr>");
+            document.write("역순으로 재정렬된 배열" + "<br>");
+            document.write(NumberOfString.split('').reverse().join(''));
+        </script>
+    </body>
+</html>

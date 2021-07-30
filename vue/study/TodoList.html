@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>TodoList</title>
+        <script src='./vue.js'></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <input type="text" v-model="inputValue"/>
+            <button v-on:click="handleBtnClick">提交</button>
+            <ul>
+                <!-- <li >{{item}}</li>
+                <-->
+                <todo-item v-bind:content="item" 
+                           v-bind:index="index"
+                           v-for="(item, index) in list"
+                           v-on:delete="handleItemDelete">
+                </todo-item>
+            </ul>
+        </div>
+
+        <script>
+           //   // component创建全局组件
+           //  Vue.component("TodoItem", {
+           //     // props接受从父组件传来的值
+           //     props: ['content'],
+           //     template: "<li>{{content}}</li>"
+           // })
+
+           var TodoItem = {
+               props: ['content', 'index'],
+               template: "<li v-on:click='handleItemClick'>{{content}}</li>",
+               methods: {
+                   handleItemClick: function(){
+                       // 子组件传值给父组件
+                       this.$emit("delete", this.index)
+                   }
+               }
+           }
+           // Vue实例也是根实例
+            var app = new Vue({
+                el: '#app',
+                // components注册局部组件
+                components: {
+                    TodoItem: TodoItem
+                },
+                data: {
+                    list: [],
+                    inputValue: ""
+                }, 
+                methods: {
+                    handleBtnClick: function(){
+                        this.list.push(this.inputValue)
+                        this.inputValue = ""
+                    }, 
+                    handleItemDelete: function(index){
+                        // splice(index, len, [item]), 用来替换、删除、添加数组内某一个或几个值
+                        // index：数组下标 len: 替换。删除的长度 item: 替换的值，删除操作item为空
+                        this.list.splice(index, 1)
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,8 @@
+body {background-color: aliceblue;}
+p {font-family: 휴먼편지체; font-size: 1em; text-indent: 1em;}
+/* text-indent属性规定文本块中首行文本的缩进 */
+h1 {color: brown; text-align: center;}
+#button {font-family: 휴먼편지체; font-size: 1em; text-indent: 1em;}
+#options {color: blue; font-weight: bold;font-family: gothic;}
+div {background-color: pink; margin: 10px; padding: 10px;}
+footer {background-color: orange; border-radius: 50px;}

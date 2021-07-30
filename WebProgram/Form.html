@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML表格</title>
+    </head>
+
+    <body>
+        <p>
+            <table border="1">
+            <!--表格由<table>标签来定义-->
+            <!--边框属性来显示一个带有边框的表格-->
+                <tr>
+                <!--行由<tr>标签来定义-->
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                    <!--使用<th>标签定义表头,大多数浏览器会把表头显示为粗体居中的文本-->
+                </tr>
+                <tr>
+                    <td>row 1, cell 1</td>
+                    <!--<td>标签指表格数据,数据单元格包含文本,图片,列表,段落,表单,水平线,表格-->
+                    <td>row 1, cell 2</td>
+                </tr>
+                <tr>
+                    <td>row 2, cell 1</td>
+                    <td>row 2, cell 2</td>
+                </tr>
+            </table>
+        </p>
+        <hr>
+        <p>
+            <table border="1">
+                <caption>Monthly saving</caption>
+                <!--定义表格标题-->
+                <tr>
+                    <th>Month</th>
+                    <th>Saving</th>
+                </tr>
+                <tr>
+                    <td>January</td>
+                    <td>$100</td>
+                </tr>
+                <tr>
+                    <td>February</td>
+                    <td>$50</td>
+                </tr>
+            </table>
+            <p>
+                <b>注释：</b>一个带标题(caption)的表格
+            </p>
+        </p>
+        <hr>
+        <p>
+            <h4>单元格跨两列:</h4>
+            <table border="1">
+                <tr>
+                    <th>Name</th>
+                    <th colspan="2">Telophone</th>
+                </tr>
+                <tr>
+                    <td>Bill Gates</td>
+                    <td>555 77 854</td>
+                    <td>555 77 855</td>
+                </tr>
+            </table>
+
+            <h4>单元格跨两行:</h4>
+            <table border="1">
+                <tr>
+                    <th>First Name：</th>
+                    <td>Bill Gates</td>
+                </tr>
+                <tr>
+                    <th rowspan="2">Telephone:</th>
+                    <td>555 77 854</td>
+                </tr>
+                <tr>
+                    <td>555 77 866</td>
+                </tr>
+            </table>
+        </p>
+        <hr>
+        <p>
+            <table border="1">
+                <tr>
+                    <td>
+                        <p>这是一个段落</p>
+                        <p>这是另一个段落</p>
+                    </td>
+                    <td>
+                        这个单元包含一个表格:
+                        <table border="1">
+                            <tr>
+                                <td>A</td>
+                                <td>B</td>
+                            </tr>
+                            <tr>
+                                <td>C</td>
+                                <td>D</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        这个单元格包含一个列表
+                        <ul>
+                            <li>apples</li>
+                            <li>bananas</li>
+                            <li>pineapples</li>
+                        </ul>
+                    </td>
+                    <td>HELLO</td>
+                </tr>
+            </table>
+            <b>注释：</b>在不同的元素内显示元素
+        </p>
+        <hr>
+        <p>
+            <h4>没有单元格边距</h4>
+            <table border="1">
+                <tr>
+                    <td>First</td>
+                    <td>Row</td>
+                </tr>
+                <tr>
+                    <td>Second</td>
+                    <td>Row</td>
+                </tr>
+            </table>
+
+            <h4>有单元格边距</h4>
+            <table border="1" cellpadding="10">
+                <tr>
+                    <td>First</td>
+                    <td>Row</td>
+                </tr>
+                <tr>
+                    <td>Second</td>
+                    <td>Row</td>
+                </tr>
+            </table>
+            <b>注释: </b>使用cell padding来创建单元格内容与其边框之间的空白
+        </p>
+        <hr>
+        <p>
+            <h4>没有单元格间距</h4>
+            <table border="1">
+                <tr>
+                    <td>First</td>
+                    <td>Row</td>
+                </tr>
+                <tr>
+                    <td>Second</td>
+                    <td>Row</td>
+                </tr>
+            </table>
+
+            <h4>单元格间距="0"</h4>
+            <table border="1" cellspacing="0">
+                <tr>
+                    <td>First</td>
+                    <td>Row</td>
+                </tr>
+                <tr>
+                    <td>Second</td>
+                    <td>Row</td>
+                </tr>
+            </table>
+
+            <h4>单元格间距="10"</h4>
+            <table border="1" cellspacing="10">
+                <tr>
+                    <td>First</td>
+                    <td>Row</td>
+                </tr>
+                <tr>
+                    <td>Second</td>
+                    <td>Row</td>
+                </tr>
+            </table>
+            <b>注释: </b>使用cellspacing来增加单元格之间空白的距离
+        </p>
+    </body>
+</html>

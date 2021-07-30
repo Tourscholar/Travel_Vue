@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>설문조사</title>
+        <link href="Lab6survey.css" type="text/css" rel="stylesheet">
+    </head>
+
+    <body>
+        <h1>설문지</h1>
+        <p>
+            소프트웨어 기술에 대한 의견을 듣습니다.많은 참여 부탁드립니다.
+        </p>
+        <hr>
+        <div>
+            <form action="">
+                <span id="options">학년</span><input type="radio" name="school year" value="1"><span id="button">1학년</span>
+                    <input type="radio" name="school year" value="2"><span id="button">2학년</span>
+                    <input type="radio" name="school year" value="3"><span id="button">3학년</span>
+                    <input type="radio" name="school year" value="4"><span id="button">4학년</span>
+            </form>
+            <form action="">
+                <span id="options">성별</span><input type="radio" name="sex" value="1"><span id="button">남</span>
+                    <input type="radio" name="sex" value="2"><span id="button">여</span>
+            </form>
+            <form action="">
+                <span id="options">관심 분야</span>
+                <select name="specialty">
+                    <option value="1">모바일 소프트웨어 </option>
+                </select>
+            </form>
+            <form action="">
+                <span id="options">진로(다중 선택)</span><input type="radio" name="direction" value="1"><span id="button">개발</span>
+                    <input type="radio" name="direction" value="2"><span id="button">기획</span>
+                    <input type="radio" name="direction" value="3"><span id="button">영업</span>
+                    <input type="radio" name="direction" value="4"><span id="button">창업</span>
+            </form>
+            <br/>
+            <span id="options">남기고 싶은 말</span>
+            <p>
+                <textarea rows="10" cols="50">
+                    글을 남겨주세요
+                </textarea>
+            </p>
+        </div>
+        <footer>
+            <p>Copyright 2018 by SeoulTech 컴퓨터공학과</p>
+        </footer>
+    </body>
+</html>
