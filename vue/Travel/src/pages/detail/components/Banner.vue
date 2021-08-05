@@ -1,16 +1,18 @@
 <template>
-  <div class="banner">
-    <img  class="banner-img" src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_600x330_f922b488.jpg" />
-    <div class="banner-info">
-      <div clas="banner-title">故宫(AAAAA景区)</div>
-      <div class="banner-number">12<span class="iconfont">&#xe632;</span></div>
+  <div>
+    <div class="banner">
+      <img  class="banner-img" src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_600x330_f922b488.jpg" />
+      <div class="banner-info">
+        <div class="banner-title">故宫(AAAAA景区)</div>
+        <div class="banner-number"><span class="iconfont banner-icon">&#xe601;</span>12</div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Detail'
+  name: 'DetailBanner'
 }
 </script>
 
@@ -35,9 +37,13 @@ export default {
         font-size: .32rem
         padding: 0 .2rem
       .banner-number
+        height: .32rem
+        line-height: .32rem
+        margin-top: .14rem
         padding: 0 .4rem
-        line-height: .4rem
-        height: .4rem
         border-radius: .2rem
         background: rgba(0, 0, 0, .8)
+        font-size: .24rem
+        .banner-icon
+          font-size: .24rem
 </style>
