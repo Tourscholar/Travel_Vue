@@ -8,7 +8,7 @@
     </div>
     <router-link to="/city">
       <div class="header-right">
-        {{ doubleCity }}
+        {{ city }}
         <span class="iconfont arrow-icon">&#xe600;</span>
       </div>
     </router-link>
