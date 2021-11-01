@@ -1,84 +1,99 @@
 <template>
-    <ul class="list">
-      <li
-        class="item"
-        v-for="item of letters"
-        :key="item"
-        :ref="item"
-        @touchstart="handleTouchStart"
-        @touchmove="handleTouchMove"
-        @touchend="handleTouchEnd"
-        @click="handleLetterClick">{{item}}
-      </li>
-    </ul>
+  <ul class="list">
+    <li
+      class="item"
+      v-for="item of letters"
+      :key="item"
+      :ref="(elem) => (elems[item] = elem)"
+      @touchstart="handleTouchStart"
+      @touchmove="handleTouchMove"
+      @touchend="handleTouchEnd"
+      @click="handleLetterClick"
+    >
+      {{ item }}
+    </li>
+  </ul>
 </template>
 
 <script>
+import { computed, onUpdated, ref } from "vue";
 export default {
-  name: 'CityAlphabet',
+  name: "CityAlphabet",
   props: {
-    cities: Object
+    cities: Object,
   },
-  computed: {
-    letters () {
-      const letters = []
-      for (let i in this.cities) {
-        letters.push(i)
+  setup(props, context) {
+    let touchStatus = false;
+    let startY = 0;
+    let timer = null;
+    const elems = ref([]);
+    const letters = computed(() => {
+      const letters = [];
+      for (let i in props.cities) {
+        letters.push(i);
       }
-      return letters
+      return letters;
+    });
+    onUpdated(() => {
+      startY = elems.value["A"].offsetTop;
+    });
+
+    function handleLetterClick(e) {
+      context.emit("change", e.target.innerText);
     }
-  },
-  data () {
-    return {
-      touchStatus: false,
-      startY: 0,
-      timer: null
+
+    function handleTouchStart() {
+      touchStatus = true;
     }
-  },
-  updated () {
-    this.startY = this.$refs['A'].offsetTop
-  },
-  methods: {
-    handleLetterClick (e) {
-      this.$emit('change', e.target.innerText)
-    },
-    handleTouchStart () {
-      this.touchStatus = true
-    },
-    handleTouchMove (e) {
-      if (this.touchStatus) {
-        if (this.timer) {
-          clearTimeout(this.timer)
+
+    function handleTouchEnd() {
+      touchStatus = false;
+    }
+
+    function handleTouchMove(e) {
+      if (touchStatus) {
+        if (timer) {
+          clearTimeout(this.timer);
+          timer = null;
         }
-        this.timer = setTimeout(() => {
-          const touchY = e.touches[0].clientY - 74
-          const index = Math.floor((touchY - this.startY) / 20)
-          if (index >= 0 && index < this.letters.length) {
-            this.$emit('change', this.letters[index])
+        timer = setTimeout(() => {
+          const touchY = e.touches[0].clientY - 74;
+          const index = Math.floor((touchY - startY) / 20);
+          if (index >= 0 && index < letters.value.length) {
+            context.emit("change", letters.value[index]);
           }
-        }, 6)
+        }, 6);
       }
-    },
-    handleTouchEnd () {
-      this.touchStatus = false
     }
-  }
-}
+    return {
+      elems,
+      letters,
+      handleLetterClick,
+      handleTouchStart,
+      handleTouchEnd,
+      handleTouchMove,
+    };
+  },
+};
 </script>
 
 <style lang="stylus" scoped>
-  @import '~styles/varibles.styl'
-  .list
-    display: flex
-    flex-direction: column
-    justify-content: center
-    position absolute
-    top: 1.58rem
-    right: 0
-    bottom: 0
-    width: .4rem
-    .item
-      line-height: .4rem
-      text-align: center
-      color: $bgColor
+@import '~styles/varibles.styl';
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 1.58rem;
+  right: 0;
+  bottom: 0;
+  width: 0.4rem;
+
+  .item {
+    line-height: 0.4rem;
+    text-align: center;
+    color: $bgColor;
+  }
+}
 </style>
