@@ -70,7 +70,7 @@ export default {
 
     watch(
       () => props.letter,
-      (leter, prevLetter) => {
+      (letter, prevLetter) => {
         if (letter && scroll) {
           const element = elems.value[letter];
           scroll.scrollToElement(element);
